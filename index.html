@@ -2,6 +2,7 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>👑 Valtamerten ja kaiken elävän mahtavan hallisijan ja isän 📺 - Virallinen (Ainoa) Arkistopalvelu</title>
     <style>
         /* RÄIKEÄ STYLE: 90-luvun alun web-helvetti */
@@ -58,12 +59,18 @@
         }
 
         .video-thumbnail {
-            background-color: #FFFFFF;
-            border: 5px dashed #FF00FF;
-            padding: 10px;
-            width: 300px;
-            box-shadow: 10px 10px #000000;
-        }
+    background-color: #FFFFFF;
+    border: 5px dashed #FF00FF;
+    padding: 10px;
+    
+    /* Tärkeimmät muutokset: */
+    width: 300px; 
+    min-width: 280px; /* Varmistaa, että on tarpeeksi pieni */
+    max-width: 45%; /* Tekee siitä joustavan suuremmilla näytöillä */
+    /* Loppuu: */
+    
+    box-shadow: 10px 10px #000000;
+}
 
         .video-thumbnail h3 {
             color: #008000; /* Tummanvihreä */
@@ -119,6 +126,22 @@
         @keyframes slidein {
             from { transform: translateX(-5%); }
             to { transform: translateX(5%); }
+        }
+
+        /* MOBIILIYHTEENSOPIVA CSS */
+        @media (max-width: 600px) {
+            .video-thumbnail {
+                width: 90%; /* Vie lähes koko mobiilinäytön leveyden */
+                max-width: 90%;
+            }
+
+            .header h1 {
+                font-size: 32px; /* Pienennä otsikkoa ettei se vie liikaa tilaa */
+            }
+
+            .slogan {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -229,6 +252,7 @@
 </body>
 
 </html>
+
 
 
 
